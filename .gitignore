@@ -1,0 +1,8 @@
+# Binaries
+
+*.o
+*.a
+
+# Directories
+
+/lib
