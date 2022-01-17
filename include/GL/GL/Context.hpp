@@ -179,7 +179,6 @@ namespace GL
 	private:
 		friend class Window;
 
-		bool owned;
 		GLint defaultViewport[4];
 
 #if defined( OOGL_PLATFORM_WINDOWS )

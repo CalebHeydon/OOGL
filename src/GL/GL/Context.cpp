@@ -130,10 +130,7 @@ namespace GL
 
 	Context::~Context()
 	{
-		if ( !owned ) return;
 
-		glXMakeCurrent( display, 0, NULL );
-		glXDestroyContext( display, context );
 	}
 
 	float Context::Time()
@@ -147,8 +144,6 @@ namespace GL
 	Context::Context()
 	{
 		// Prepare class for using unowned context (i.e. created by external party)
-		owned = false;
-
 		glGetIntegerv( GL_VIEWPORT, (GLint*)&defaultViewport );
 
 		gettimeofday( &timeOffset, NULL );
