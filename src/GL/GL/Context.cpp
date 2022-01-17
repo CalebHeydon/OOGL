@@ -19,8 +19,9 @@
 	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 */
 
+#include <GL/glew.h>
+
 #include <GL/GL/Context.hpp>
-#include <GL/GL/Extensions.hpp>
 
 namespace GL
 {
@@ -127,8 +128,29 @@ namespace GL
 		glDrawElements( mode, count, type, (const GLvoid*)offset );
 	}
 
-	Context Context::UseExistingContext()
+	Context::~Context()
 	{
-		return Context();
+		if ( !owned ) return;
+
+		glXMakeCurrent( display, 0, NULL );
+		glXDestroyContext( display, context );
+	}
+
+	float Context::Time()
+	{
+		timeval time;
+		gettimeofday( &time, NULL );
+
+		return time.tv_sec - timeOffset.tv_sec + ( time.tv_usec - timeOffset.tv_usec ) / 1000000.0f;
+	}
+
+	Context::Context()
+	{
+		// Prepare class for using unowned context (i.e. created by external party)
+		owned = false;
+
+		glGetIntegerv( GL_VIEWPORT, (GLint*)&defaultViewport );
+
+		gettimeofday( &timeOffset, NULL );
 	}
 }

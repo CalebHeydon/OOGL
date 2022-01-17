@@ -19,6 +19,8 @@
 	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 */
 
+#include <GL/glew.h>
+
 #include <GL/GL/Renderbuffer.hpp>
 
 namespace GL

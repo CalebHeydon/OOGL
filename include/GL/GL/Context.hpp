@@ -145,10 +145,6 @@ namespace GL
 	class Context
 	{
 	public:
-		void Activate();
-		
-		void SetVerticalSync( bool enabled );
-
 		void Enable( Capability::capability_t capability );
 		void Disable( Capability::capability_t capability );
 
@@ -176,8 +172,6 @@ namespace GL
 		void DrawElements( const VertexArray& vao, Primitive::primitive_t mode, intptr_t offset, uint count, uint type );
 
 		float Time();
-
-		static Context UseExistingContext();
 
 		Context();
 		~Context();

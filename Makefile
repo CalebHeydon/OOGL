@@ -12,8 +12,8 @@ LDFLAGS = -shared
 libpng = $(patsubst src/GL/Util/libpng/%.c,lib/%.o,$(wildcard src/GL/Util/libpng/*.c))
 zlib = $(patsubst src/GL/Util/zlib/%.c,lib/%.o,$(wildcard src/GL/Util/zlib/*.c))
 
-lib/libOOGL.so: lib lib/Mat3.o lib/Mat4.o lib/Vec2.o lib/Vec3.o lib/Vec4.o lib/Window.o lib/Window_X11.o lib/Extensions.o lib/Context.o lib/Context_X11.o lib/Shader.o lib/Program.o lib/VertexBuffer.o lib/VertexArray.o lib/Texture.o lib/Renderbuffer.o lib/Framebuffer.o lib/Image.o lib/Mesh.o $(libpng) $(zlib)
-	$(LD) $(LDFLAGS) lib/Mat3.o lib/Mat4.o lib/Vec2.o lib/Vec3.o lib/Vec4.o lib/Window.o lib/Window_X11.o lib/Extensions.o lib/Context.o lib/Context_X11.o lib/Shader.o lib/Program.o lib/VertexBuffer.o lib/VertexArray.o lib/Texture.o lib/Renderbuffer.o lib/Framebuffer.o lib/Image.o lib/Mesh.o $(libpng) $(zlib) -o $@
+lib/libOOGL.so: lib lib/Mat3.o lib/Mat4.o lib/Vec2.o lib/Vec3.o lib/Vec4.o lib/Context.o lib/Shader.o lib/Program.o lib/VertexBuffer.o lib/VertexArray.o lib/Texture.o lib/Renderbuffer.o lib/Framebuffer.o lib/Image.o lib/Mesh.o $(libpng) $(zlib)
+	$(LD) $(LDFLAGS) lib/Mat3.o lib/Mat4.o lib/Vec2.o lib/Vec3.o lib/Vec4.o lib/Context.o lib/Shader.o lib/Program.o lib/VertexBuffer.o lib/VertexArray.o lib/Texture.o lib/Renderbuffer.o lib/Framebuffer.o lib/Image.o lib/Mesh.o $(libpng) $(zlib) -o $@
 
 # 3D Math
 

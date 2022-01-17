@@ -19,8 +19,12 @@
 	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 */
 
+#include <GL/glew.h>
+
 #include <GL/GL/Context.hpp>
-#include <GL/GL/Extensions.hpp>
+
+extern GLXContext glXCreateContextAttribsARB( Display* dpy, GLXFBConfig config, GLXContext share_context, Bool direct, const int* attrib_list );
+extern void glXSwapIntervalSGI(int interval);
 
 #ifdef OOGL_PLATFORM_LINUX
 
@@ -38,7 +42,6 @@ namespace GL
 	Context::Context( uchar color, uchar depth, uchar stencil, uint antialias, Display* display, int screen, ::Window window )
 	{
 		// Load OpenGL extensions
-		LoadExtensions();
 
 		// Choose an appropriate config
 		const int pixelAttribs[] = {

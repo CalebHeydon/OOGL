@@ -26,7 +26,6 @@
 
 #include <GL/Platform.hpp>
 #include <GL/GL/GC.hpp>
-#include <GL/GL/Extensions.hpp>
 #include <GL/GL/Shader.hpp>
 #include <GL/Math/Mat3.hpp>
 #include <GL/Math/Mat4.hpp>

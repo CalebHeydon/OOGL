@@ -26,7 +26,6 @@
 
 #include <GL/Platform.hpp>
 #include <GL/GL/GC.hpp>
-#include <GL/GL/Extensions.hpp>
 #include <GL/Util/Mesh.hpp>
 #include <GL/Math/Vec4.hpp>
 #include <functional>

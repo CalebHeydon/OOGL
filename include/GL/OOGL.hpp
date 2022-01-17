@@ -42,17 +42,9 @@
 #include <GL/Math/Util.hpp>
 
 /*
-	Window management
-*/
-
-#include <GL/Window/Window.hpp>
-#include <GL/Window/Event.hpp>
-
-/*
 	OpenGL
 */
 
-#include <GL/GL/Extensions.hpp>
 #include <GL/GL/Context.hpp>
 #include <GL/GL/Shader.hpp>
 #include <GL/GL/Program.hpp>
