@@ -115,7 +115,6 @@ namespace GL
 	Context::Context()
 	{
 		// Prepare class for using unowned context (i.e. created by external party)
-		LoadExtensions();
 		owned = false;
 
 		glGetIntegerv( GL_VIEWPORT, (GLint*)&defaultViewport );

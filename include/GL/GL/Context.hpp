@@ -179,12 +179,11 @@ namespace GL
 
 		static Context UseExistingContext();
 
+		Context();
 		~Context();
 
 	private:
 		friend class Window;
-		
-		Context();
 
 		bool owned;
 		GLint defaultViewport[4];
