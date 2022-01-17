@@ -4,7 +4,7 @@ CC = clang++
 CCC = clang
 LD = ld.lld
 CCFLAGS = -O3 -fPIC
-CCCFLAGS = -stdlib=libc++
+CCCFLAGS = 
 LDFLAGS = -shared
 
 # Final library
